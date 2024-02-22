@@ -6,12 +6,13 @@
 @description Choose your infinite craft colors!
 @author amione
 @preprocessor stylus
-@version 1.0.4
+@version 1.0.5
 @license MIT
 
 @var color scrollbar-color 'Scrollbar Color' #f0f0f0
 @var color scrollbar-highlight-color 'Scrollbar Highlight Color' #cdcdcd
 @var color background 'Background' #ffffff
+@var color particles 'Particles (adds overlay, quirky)' transparent
 @var color sidebar-background 'Sidebar Background' #ffffff
 @var color sidebar-border-left-color 'Sidebar Left Border Color' #c8c8c8
 @var color search-background 'Search Background' #ffffff
@@ -75,6 +76,10 @@
         background-color: search-close-button-color !important;
         -webkit-mask: url(/infinite-craft/close.svg) no-repeat center !important;
         mask: url(/infinite-craft/close.svg) no-repeat center !important;
+    }
+    .particles {
+        background-color: particles !important;
+        background-clip: text
     }
     .empty-sidebar {
         color: no-items-text-color !important;
