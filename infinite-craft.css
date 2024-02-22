@@ -1,0 +1,63 @@
+/* ==UserStyle==
+@name Infinite Craft Themer
+@namespace amione
+@description Choose your infinite craft colors!
+@author amione
+@version 1.0.0
+==/UserStyle== */
+
+@-moz-document url("https://neal.fun/infinite-craft/") {
+.sidebar {
+    scrollbar-color: var(--scrollbar-color) var(--scrollbar-highlight-color);
+}
+.container {
+    background: var(--background) !important;
+}
+.items {
+    background: var(--sidebar-background) !important;
+}
+.sidebar-input {
+    background: var(--search-background) !important;
+    color: var(--search-text) !important;
+}
+.item {
+    background: var(--item-background) !important;
+    color: var(--item-color) !important;
+}
+.item:hover {
+    background-color: var(--item-hover) !important;
+    border-color: var(--item-border-hover) !important;
+}
+div[id^="instance-"] {
+    background: var(--placed-item-background) !important;
+}
+div[id^="instance-"]:hover {
+    background: var(--placed-item-background-hover) !important;
+}
+.sidebar-input-close {
+    filter: blur(3px);
+    opacity: 1 !important;
+    background-color: var(--search-close-button-color) !important;
+    -webkit-mask: url(/infinite-craft/close.svg) no-repeat center !important;
+    mask: url(/infinite-craft/close.svg) no-repeat center !important;
+}
+.empty-sidebar {
+    color: var(--no-items-text-color) !important;
+}
+.instruction {
+    color: var(--instruction-text-color) !important;
+}
+.coffee {
+    visibility: var(--donate-visibility) !important;
+}
+.sidebar-sorting-item {
+    background: var(--view-buttons-background-color) !important;
+    color: var(--view-buttons-color) !important;
+}
+.sidebar-controls::after {
+    background: linear-gradient(0deg, var(--sidebar-inverse-shadow-gradient) 0%, rgba(0, 0, 0, 0) 100%) !important
+}
+.adsbygoogle {
+    visibility: var(--ads-visibility) !important;
+}
+}
