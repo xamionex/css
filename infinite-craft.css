@@ -1,63 +1,88 @@
 /* ==UserStyle==
 @name Infinite Craft Themer
-@namespace amione
+@namespace github.com/xamionex/css
 @description Choose your infinite craft colors!
 @author amione
-@version 1.0.0
+@preprocessor stylus
+@version 1.0.1
+
+@var color scrollbar-color 'Scrollbar Color' #f0f0f0
+@var color scrollbar-highlight-color 'Scrollbar Highlight Color' #cdcdcd
+@var color background 'Background' #ffffff
+@var color sidebar-background 'Sidebar Background' #ffffff
+@var color search-background 'Search Background' #ffffff
+@var color search-text 'Search Text' #000
+@var color item-background 'Item Background' #ffffff
+@var color item-color 'Item Color' #000
+@var color item-hover 'Item Hover' #d6fcff
+@var color item-border-hover 'Item Border Hover' #91a8c1
+@var color search-close-button-color 'Search Close Button Color' #000
+@var color no-items-text-color 'No Items Text Color' #000
+@var color instruction-text-color 'Instruction Text Color' #000
+@var select donate-visibility 'Donate Visibility' {
+    'Hidden': 'hidden',
+    'Visible': 'visible'
+}
+@var color view-buttons-background-color 'View Buttons Background Color' #ffffff
+@var color view-buttons-color 'View Buttons Color' #000
+@var color discoveries-active 'Discoveries Button Toggled Background Color' #fff9ea
+@var color sidebar-inverse-shadow-gradient 'Sidebar Inverse Shadow Gradient' #ffffff
+@var select ads-visibility 'Ads Visibility' {
+    'Hidden': 'hidden',
+    'Visible': 'visible'
+}
+
 ==/UserStyle== */
 
 @-moz-document url("https://neal.fun/infinite-craft/") {
-.sidebar {
-    scrollbar-color: var(--scrollbar-color) var(--scrollbar-highlight-color);
-}
-.container {
-    background: var(--background) !important;
-}
-.items {
-    background: var(--sidebar-background) !important;
-}
-.sidebar-input {
-    background: var(--search-background) !important;
-    color: var(--search-text) !important;
-}
-.item {
-    background: var(--item-background) !important;
-    color: var(--item-color) !important;
-}
-.item:hover {
-    background-color: var(--item-hover) !important;
-    border-color: var(--item-border-hover) !important;
-}
-div[id^="instance-"] {
-    background: var(--placed-item-background) !important;
-}
-div[id^="instance-"]:hover {
-    background: var(--placed-item-background-hover) !important;
-}
-.sidebar-input-close {
-    filter: blur(3px);
-    opacity: 1 !important;
-    background-color: var(--search-close-button-color) !important;
-    -webkit-mask: url(/infinite-craft/close.svg) no-repeat center !important;
-    mask: url(/infinite-craft/close.svg) no-repeat center !important;
-}
-.empty-sidebar {
-    color: var(--no-items-text-color) !important;
-}
-.instruction {
-    color: var(--instruction-text-color) !important;
-}
-.coffee {
-    visibility: var(--donate-visibility) !important;
-}
-.sidebar-sorting-item {
-    background: var(--view-buttons-background-color) !important;
-    color: var(--view-buttons-color) !important;
-}
-.sidebar-controls::after {
-    background: linear-gradient(0deg, var(--sidebar-inverse-shadow-gradient) 0%, rgba(0, 0, 0, 0) 100%) !important
-}
-.adsbygoogle {
-    visibility: var(--ads-visibility) !important;
-}
+    .sidebar {
+        scrollbar-color: scrollbar-highlight-color scrollbar-color;
+    }
+    .container {
+        background: background !important;
+    }
+    .items {
+        background: sidebar-background !important;
+    }
+    .sidebar-input {
+        background: search-background !important;
+        color: search-text !important;
+    }
+    .item {
+        background: item-background !important;
+        color: item-color !important;
+    }
+    .item:hover {
+        background-color: item-hover !important;
+        border-color: item-border-hover !important;
+    }
+    .sidebar-input-close {
+        filter: blur(3px);
+        opacity: 1 !important;
+        background-color: search-close-button-color !important;
+        -webkit-mask: url(/infinite-craft/close.svg) no-repeat center !important;
+        mask: url(/infinite-craft/close.svg) no-repeat center !important;
+    }
+    .empty-sidebar {
+        color: no-items-text-color !important;
+    }
+    .instruction {
+        color: instruction-text-color !important;
+    }
+    .coffee {
+        visibility: donate-visibility !important;
+    }
+    .sidebar-sorting-item {
+        background: view-buttons-background-color !important;
+        color: view-buttons-color !important;
+    }
+    .sidebar-discoveries-active {
+        color: discoveries-active
+    }
+    .sidebar-controls::after {
+        background: linear-gradient(0deg, sidebar-inverse-shadow-gradient 0%, rgba(0, 0, 0, 0) 100%) !important
+    }
+    .adsbygoogle {
+        visibility: ads-visibility !important;
+    }
 }
