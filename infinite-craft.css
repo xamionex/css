@@ -1,10 +1,13 @@
 /* ==UserStyle==
 @name Infinite Craft Themer
 @namespace github.com/xamionex/css
+@homepageURL https://github.com/xamionex/css
+@updateURL https://raw.githubusercontent.com/xamionex/css/main/infinite-craft.css
 @description Choose your infinite craft colors!
 @author amione
 @preprocessor stylus
-@version 1.0.1
+@version 1.0.2
+@license MIT
 
 @var color scrollbar-color 'Scrollbar Color' #f0f0f0
 @var color scrollbar-highlight-color 'Scrollbar Highlight Color' #cdcdcd
