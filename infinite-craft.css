@@ -2,24 +2,26 @@
 @name Infinite Craft Themer
 @namespace github.com/xamionex/css
 @homepageURL https://github.com/xamionex/css
-@updateURL https://raw.githubusercontent.com/xamionex/css/main/infinite-craft.css
 @description Choose your infinite craft colors!
 @author amione
 @preprocessor stylus
-@version 1.0.2
+@version 1.0.3
 @license MIT
 
 @var color scrollbar-color 'Scrollbar Color' #f0f0f0
 @var color scrollbar-highlight-color 'Scrollbar Highlight Color' #cdcdcd
 @var color background 'Background' #ffffff
 @var color sidebar-background 'Sidebar Background' #ffffff
+@var color sidebar-border-left-color 'Sidebar Left Border Color' #c8c8c8
 @var color search-background 'Search Background' #ffffff
 @var color search-text 'Search Text' #000
 @var color item-background 'Item Background' #ffffff
 @var color item-color 'Item Color' #000
 @var color item-hover 'Item Hover' #d6fcff
+@var color item-border 'Item Border' #c8c8c8
 @var color item-border-hover 'Item Border Hover' #91a8c1
 @var color search-close-button-color 'Search Close Button Color' #000
+@var color search-top-border-color 'Search Top Border Color' #c8c8c8
 @var color no-items-text-color 'No Items Text Color' #000
 @var color instruction-text-color 'Instruction Text Color' #000
 @var select donate-visibility 'Donate Visibility' {
@@ -28,6 +30,8 @@
 }
 @var color view-buttons-background-color 'View Buttons Background Color' #ffffff
 @var color view-buttons-color 'View Buttons Color' #000
+@var color view-buttons-top-border-color 'View Buttons Top Border Color' #c8c8c8
+@var color view-buttons-separator-border-color 'View Buttons Separator Border Color' #c8c8c8
 @var color discoveries-active 'Discoveries Button Toggled Background Color' #fff9ea
 @var color sidebar-inverse-shadow-gradient 'Sidebar Inverse Shadow Gradient' #ffffff
 @var select ads-visibility 'Ads Visibility' {
@@ -47,17 +51,22 @@
     .items {
         background: sidebar-background !important;
     }
+    .sidebar {
+        border-left: 1px solid sidebar-border-left-color !important;
+    }
     .sidebar-input {
         background: search-background !important;
         color: search-text !important;
+        border-top: 1px solid search-top-border-color !important
     }
     .item {
         background: item-background !important;
         color: item-color !important;
+        border: 1px solid item-border !important;
     }
     .item:hover {
         background-color: item-hover !important;
-        border-color: item-border-hover !important;
+        border: 1px solid item-border-hover !important;
     }
     .sidebar-input-close {
         filter: blur(3px);
@@ -74,6 +83,10 @@
     }
     .coffee {
         visibility: donate-visibility !important;
+    }
+    .sidebar-sorting {
+        border-top: 1px solid view-buttons-top-border-color !important;
+        background: view-buttons-separator-border-color !important
     }
     .sidebar-sorting-item {
         background: view-buttons-background-color !important;
