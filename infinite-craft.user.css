@@ -6,49 +6,99 @@
 @description Choose your infinite craft colors!
 @author amione
 @preprocessor stylus
-@version 1.0.5
+@version 1.0.6
 @license MIT
 
-@var color scrollbar-color 'Scrollbar Color' #f0f0f0
-@var color scrollbar-highlight-color 'Scrollbar Highlight Color' #cdcdcd
+@var color site-title 'Neal.Fun Image' #040404
+@var select site-title-visibility 'Neal Fun Image' {
+    'Enabled': 'visible',
+    'Disabled': 'hidden'
+}
+@var color logo-img 'Logo Image' #040404
+@var select logo-img-visibility 'Logo Image' {
+    'Enabled': 'visible',
+    'Disabled': 'hidden'
+}
+@var color reset-text 'Reset Text Button' #040404
+@var select reset-text-visibility 'Reset Text Button' {
+    'Enabled': 'visible',
+    'Disabled': 'hidden'
+}
+@var color donate-button 'Donate Button' #040404
+@var select donate-button-visibility 'Donate Button' {
+    'Disabled': 'hidden',
+    'Enabled': 'visible'
+}
+@var color trash-button 'Trash Button' #040404
+@var select trash-button-visibility 'Trash Button' {
+    'Enabled': 'visible',
+    'Disabled': 'hidden'
+}
+@var color sound-button 'Sound Button' #040404
+@var select sound-button-visibility 'Sound Button' {
+    'Enabled': 'visible',
+    'Disabled': 'hidden'
+}
+@var color scrollbar-color 'Scrollbar' #f0f0f0
+@var color scrollbar-highlight-color 'Scrollbar Highlight' #cdcdcd
 @var color background 'Background' #ffffff
-@var color particles 'Particles (adds overlay, quirky)' transparent
 @var color sidebar-background 'Sidebar Background' #ffffff
-@var color sidebar-border-left-color 'Sidebar Left Border Color' #c8c8c8
+@var color sidebar-border-left-color 'Sidebar Left Border' #c8c8c8
 @var color search-background 'Search Background' #ffffff
 @var color search-text 'Search Text' #000
 @var color item-background 'Item Background' #ffffff
-@var color item-color 'Item Color' #000
+@var color item-color 'Item' #000
 @var color item-hover 'Item Hover' #d6fcff
 @var color item-border 'Item Border' #c8c8c8
 @var color item-border-hover 'Item Border Hover' #91a8c1
-@var color search-close-button-color 'Search Close Button Color' #000
-@var color search-top-border-color 'Search Top Border Color' #c8c8c8
-@var color no-items-text-color 'No Items Text Color' #000
-@var color instruction-text-color 'Instruction Text Color' #000
-@var select donate-visibility 'Donate Visibility' {
-    'Hidden': 'hidden',
-    'Visible': 'visible'
-}
-@var color view-buttons-background-color 'View Buttons Background Color' #ffffff
-@var color view-buttons-color 'View Buttons Color' #000
-@var color view-buttons-top-border-color 'View Buttons Top Border Color' #c8c8c8
-@var color view-buttons-separator-border-color 'View Buttons Separator Border Color' #c8c8c8
-@var color discoveries-active 'Discoveries Button Toggled Background Color' #fff9ea
+@var color search-close-button-color 'Search Close Button' #000
+@var color search-top-border-color 'Search Top Border' #c8c8c8
+@var color no-items-text-color 'No Items Text' #000
+@var color instruction-text-color 'Instruction Text' #000
+@var color view-buttons-background-color 'View Buttons Background' #ffffff
+@var color view-buttons-color 'View Buttons' #000
+@var color view-buttons-top-border-color 'View Buttons Top Border' #c8c8c8
+@var color view-buttons-separator-border-color 'View Buttons Separator Border' #c8c8c8
+@var color discoveries-active 'Discoveries Button Toggled Background' #fff9ea
 @var color sidebar-inverse-shadow-gradient 'Sidebar Inverse Shadow Gradient' #ffffff
 @var select ads-visibility 'Ads Visibility' {
-    'Hidden': 'hidden',
-    'Visible': 'visible'
+    'Disabled': 'hidden',
+    'Enabled': 'visible'
 }
+@var select particles-visibility 'Particles' {
+    'Enabled': 'visible',
+    'Disabled': 'hidden'
+}
+@var color particles 'Particles (adds overlay, quirky)' transparent
+@var range particles-saturation 'Particles Brightness (Multiplier)' [1,1,10,0.1]
 
 ==/UserStyle== */
-
 @-moz-document url("https://neal.fun/infinite-craft/") {
     .sidebar {
-        scrollbar-color: scrollbar-highlight-color scrollbar-color;
+        scrollbar-color: scrollbar-highlight-color scrollbar-color !important;
     }
     .container {
         background: background !important;
+    }
+    .reset {
+        visibility: reset-text-visibility !important;
+        color: reset-text !important;
+    }
+    .site-title {
+        visibility: site-title-visibility !important;
+        object-position: -99999px 99999px !important;
+        opacity: 1 !important;
+        background-color: site-title !important;
+        -webkit-mask: url(/general/logo.svg) no-repeat center !important;
+        mask: url(/general/logo.svg) no-repeat center !important;
+    }
+    .logo {
+        visibility: logo-img-visibility !important;
+        object-position: -99999px 99999px !important;
+        opacity: 1 !important;
+        background-color: logo-img !important;
+        -webkit-mask: url(/infinite-craft/logo.svg) no-repeat center !important;
+        mask: url(/infinite-craft/logo.svg) no-repeat center !important;
     }
     .items {
         background: sidebar-background !important;
@@ -71,15 +121,17 @@
         border: 1px solid item-border-hover !important;
     }
     .sidebar-input-close {
-        filter: blur(3px);
+        object-position: -99999px 99999px !important;
         opacity: 1 !important;
         background-color: search-close-button-color !important;
         -webkit-mask: url(/infinite-craft/close.svg) no-repeat center !important;
         mask: url(/infinite-craft/close.svg) no-repeat center !important;
     }
     .particles {
+        visibility: particles-visibility !important;
         background-color: particles !important;
-        background-clip: text
+        background-clip: text !important;
+        filter: brightness(particles-saturation) !important;
     }
     .empty-sidebar {
         color: no-items-text-color !important;
@@ -99,7 +151,31 @@
         color: view-buttons-color !important;
     }
     .sidebar-discoveries-active {
-        color: discoveries-active
+        color: discoveries-active !important;
+    }
+    .clear {
+        visibility: trash-button-visibility !important;
+        object-position: -99999px 99999px !important;
+        opacity: 1 !important;
+        background-color: trash-button !important;
+        -webkit-mask: url(/infinite-craft/clear.svg) no-repeat center !important;
+        mask: url(/infinite-craft/clear.svg) no-repeat center !important;
+    }
+    .sound {
+        visibility: sound-button-visibility !important;
+        object-position: -99999px 99999px !important;
+        opacity: 1 !important;
+        background-color: sound-button !important;
+        -webkit-mask: url(/infinite-craft/sound.svg) no-repeat center !important;
+        mask: url(/infinite-craft/sound.svg) no-repeat center !important;
+    }
+    .coffee {
+        visibility: donate-button-visibility !important;
+        object-position: -99999px 99999px !important;
+        opacity: 1 !important;
+        background-color: donate-button !important;
+        -webkit-mask: url(/infinite-craft/coffee.svg) no-repeat center !important;
+        mask: url(/infinite-craft/coffee.svg) no-repeat center !important;
     }
     .sidebar-controls::after {
         background: linear-gradient(0deg, sidebar-inverse-shadow-gradient 0%, rgba(0, 0, 0, 0) 100%) !important
