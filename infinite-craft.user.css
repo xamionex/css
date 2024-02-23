@@ -5,7 +5,7 @@
 @description Choose your infinite craft colors!
 @author amione
 @preprocessor stylus
-@version 1.2.0
+@version 1.2.1
 @license MIT
 
 
@@ -32,8 +32,8 @@
     'Disabled': 'hidden',
     'Enabled': 'visible'
 }
-@var color trash-button '↪ Trash Button' #040404
-@var select trash-button-visibility '↪ Trash Button' {
+@var color clear-button '↪ Clear Button' #040404
+@var select clear-button-visibility '↪ Clear Button' {
     'Enabled': 'visible',
     'Disabled': 'hidden'
 }
@@ -165,9 +165,9 @@ if particles-dupes >= 1 {
         mask-size: contain
     }
     .clear {
-        visibility: trash-button-visibility;
+        visibility: clear-button-visibility;
         object-position: -99999px 99999px;
-        background-color: trash-button;
+        background-color: clear-button;
         mask-image: url(/infinite-craft/clear.svg);
         mask-size: contain
     }
