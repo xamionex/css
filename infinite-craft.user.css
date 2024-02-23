@@ -5,7 +5,7 @@
 @description Choose your infinite craft colors!
 @author amione
 @preprocessor stylus
-@version 1.2.2
+@version 1.2.3
 @license MIT
 
 
@@ -95,9 +95,13 @@
 @var color name-icon '↪ Sort By Name Icon' #000
 @var color emoji-icon '↪ Sort By Emoji Icon' #000
 
-@var color discoveries-active '🌟 Clicked: Discoveries Text' #000
-@var color discoveries-active-background '↪ Clicked: Discoveries Background' #fff9ea
+@var color discoveries-text '⭐ Discoveries Text' #000
+@var color discoveries-background '↪ Discoveries Background' #fff9ea
 @var color discoveries-icon '↪ Discoveries Icon' #000
+
+@var color discoveries-active-text '🌟 Clicked: Discoveries Text' #000
+@var color discoveries-active-background '↪ Clicked: Discoveries Background' #fff9ea
+@var color discoveries-active-icon '↪ Clicked: Discoveries Icon' #000
 
 @var color search-background '🔤 Search Background' #ffffff
 @var color search-text '↪ Search Text' #000
@@ -109,7 +113,7 @@
     'Enabled': 'visible'
 }
 
-@var select particles-visibility '⭐ Particles' {
+@var select particles-visibility '✨ Particles' {
     'Enabled': 'visible',
     'Disabled': 'hidden'
 }
@@ -203,7 +207,7 @@ if particles-dupes >= 1 {
         background-color: discovered-emoji;
         mask-image: url("/infinite-craft/magic.svg");
         mask-size: contain;
-        mask-repeat: no-repeat;;
+        mask-repeat: no-repeat;
     }
     .pinwheel {
         object-position: -99999px 99999px;
@@ -230,7 +234,7 @@ if particles-dupes >= 1 {
         background-color: no-items-emoji;
         mask-image: url("/infinite-craft/empty.svg");
         mask-size: contain;
-        mask-repeat: no-repeat;;
+        mask-repeat: no-repeat;
     }
     .instruction {
         color: instruction-text;
@@ -241,7 +245,7 @@ if particles-dupes >= 1 {
         background-color: instruction-emoji;
         mask-image: url("/infinite-craft/left-arrow.svg");
         mask-size: contain;
-        mask-repeat: no-repeat;;
+        mask-repeat: no-repeat;
     }
 
     .item:not(.instance) {
@@ -259,7 +263,7 @@ if particles-dupes >= 1 {
         border-top: 1px solid sort-top-border !important;
         background: sort-separator-border !important;
     }
-    .sidebar-sorting-item {
+    .sidebar-sort {
         background: sort-background !important;
         color: sort-text;
     }
@@ -271,20 +275,32 @@ if particles-dupes >= 1 {
             background-color: lookup(sort-type + "-icon");
             mask-image: url(sort-icon);
             mask-size: contain;
-            mask-repeat: no-repeat;;
+            mask-repeat: no-repeat;
         }
     }
 
-    .sidebar-discoveries-active {
-        color: discoveries-active;
-        background-color: discoveries-active-background;
+    .sidebar-discoveries {
+        color: discoveries-text;
+        background-color: discoveries-background !important;
     }
     .sidebar-discoveries > .sidebar-sorting-icon {
         object-position: -99999px 99999px;
         background-color: discoveries-icon;
         mask-image: url("/infinite-craft/magic.svg");
         mask-size: contain;
-        mask-repeat: no-repeat;;
+        mask-repeat: no-repeat;
+    }
+
+    .sidebar-discoveries-active {
+        color: discoveries-active-text !important;
+        background-color: discoveries-active-background !important;
+    }
+    .sidebar-discoveries-active > .sidebar-sorting-icon {
+        object-position: -99999px 99999px;
+        background-color: discoveries-active-icon !important;
+        mask-image: url("/infinite-craft/magic.svg");
+        mask-size: contain;
+        mask-repeat: no-repeat;
     }
 
     .sidebar-input {
