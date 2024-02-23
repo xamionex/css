@@ -5,7 +5,7 @@
 @description Choose your infinite craft colors!
 @author amione
 @preprocessor stylus
-@version 1.2.1
+@version 1.2.2
 @license MIT
 
 
@@ -144,14 +144,16 @@ if particles-dupes >= 1 {
         object-position: -99999px 99999px;
         background-color: site-title;
         mask-image: url(/general/logo.svg);
-        mask-size: contain
+        mask-size: contain;
+        mask-repeat: no-repeat;
     }
     .logo {
         visibility: logo-img-visibility;
         object-position: -99999px 99999px;
         background-color: logo-img;
         mask-image: url(/infinite-craft/logo.svg);
-        mask-size: contain
+        mask-size: contain;
+        mask-repeat: no-repeat;
     }
     .reset {
         visibility: reset-text-visibility;
@@ -162,21 +164,24 @@ if particles-dupes >= 1 {
         object-position: -99999px 99999px;
         background-color: donate-button;
         mask-image: url(/infinite-craft/coffee.svg);
-        mask-size: contain
+        mask-size: contain;
+        mask-repeat: no-repeat;
     }
     .clear {
         visibility: clear-button-visibility;
         object-position: -99999px 99999px;
         background-color: clear-button;
         mask-image: url(/infinite-craft/clear.svg);
-        mask-size: contain
+        mask-size: contain;
+        mask-repeat: no-repeat;
     }
     .sound {
         visibility: sound-button-visibility;
         object-position: -99999px 99999px;
         background-color: sound-button;
         mask-image: url(/infinite-craft/sound.svg);
-        mask-size: contain
+        mask-size: contain;
+        mask-repeat: no-repeat;
     }
 
     .instance {
@@ -198,12 +203,14 @@ if particles-dupes >= 1 {
         background-color: discovered-emoji;
         mask-image: url("/infinite-craft/magic.svg");
         mask-size: contain;
+        mask-repeat: no-repeat;;
     }
     .pinwheel {
         object-position: -99999px 99999px;
         background: radial-gradient(circle, new-item 0%, transparent 70%);
         mask-image: url(/infinite-craft/pinwheel.png);
-        mask-size: contain
+        mask-size: contain;
+        mask-repeat: no-repeat;
     }
 
     .sidebar {
@@ -223,6 +230,7 @@ if particles-dupes >= 1 {
         background-color: no-items-emoji;
         mask-image: url("/infinite-craft/empty.svg");
         mask-size: contain;
+        mask-repeat: no-repeat;;
     }
     .instruction {
         color: instruction-text;
@@ -233,6 +241,7 @@ if particles-dupes >= 1 {
         background-color: instruction-emoji;
         mask-image: url("/infinite-craft/left-arrow.svg");
         mask-size: contain;
+        mask-repeat: no-repeat;;
     }
 
     .item:not(.instance) {
@@ -262,6 +271,7 @@ if particles-dupes >= 1 {
             background-color: lookup(sort-type + "-icon");
             mask-image: url(sort-icon);
             mask-size: contain;
+            mask-repeat: no-repeat;;
         }
     }
 
@@ -274,6 +284,7 @@ if particles-dupes >= 1 {
         background-color: discoveries-icon;
         mask-image: url("/infinite-craft/magic.svg");
         mask-size: contain;
+        mask-repeat: no-repeat;;
     }
 
     .sidebar-input {
@@ -285,7 +296,8 @@ if particles-dupes >= 1 {
         object-position: -99999px 99999px;
         background-color: search-close-button;
         mask-image: url(/infinite-craft/close.svg);
-        mask-size: contain
+        mask-size: contain;
+        mask-repeat: no-repeat;
     }
 
     .adsbygoogle {
