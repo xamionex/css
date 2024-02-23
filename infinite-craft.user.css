@@ -5,86 +5,124 @@
 @description Choose your infinite craft colors!
 @author amione
 @preprocessor stylus
-@version 1.1.1
+@version 1.2.0
 @license MIT
 
-@var color site-title 'Neal.Fun Image' #040404
-@var select site-title-visibility 'Neal Fun Image' {
+
+
+@var color background '🪟 Background' #ffffff
+
+@var color site-title '↪ Neal.Fun Image' #040404
+@var select site-title-visibility '↪ Neal Fun Image' {
     'Enabled': 'visible',
     'Disabled': 'hidden'
 }
-@var color logo-img 'Logo Image' #040404
-@var select logo-img-visibility 'Logo Image' {
+@var color logo-img '↪ Logo Image' #040404
+@var select logo-img-visibility '↪ Logo Image' {
     'Enabled': 'visible',
     'Disabled': 'hidden'
 }
-@var color reset-text 'Reset Text Button' #040404
-@var select reset-text-visibility 'Reset Text Button' {
+@var color reset-text '↪ Reset Text Button' #040404
+@var select reset-text-visibility '↪ Reset Text Button' {
     'Enabled': 'visible',
     'Disabled': 'hidden'
 }
-@var color donate-button 'Donate Button' #040404
-@var select donate-button-visibility 'Donate Button' {
+@var color donate-button '↪ Donate Button' #040404
+@var select donate-button-visibility '↪ Donate Button' {
     'Disabled': 'hidden',
     'Enabled': 'visible'
 }
-@var color trash-button 'Trash Button' #040404
-@var select trash-button-visibility 'Trash Button' {
+@var color trash-button '↪ Trash Button' #040404
+@var select trash-button-visibility '↪ Trash Button' {
     'Enabled': 'visible',
     'Disabled': 'hidden'
 }
-@var color sound-button 'Sound Button' #040404
-@var select sound-button-visibility 'Sound Button' {
+@var color sound-button '↪ Sound Button' #040404
+@var select sound-button-visibility '↪ Sound Button' {
     'Enabled': 'visible',
     'Disabled': 'hidden'
 }
-@var color background 'Background' #ffffff
-@var color sidebar-background 'Sidebar Background' #ffffff
-@var color sidebar-border-left-color 'Sidebar Left Border' #c8c8c8
-@var color scrollbar-color 'Scrollbar' #f0f0f0
-@var color scrollbar-highlight-color 'Scrollbar Highlight' #cdcdcd
-@var select sidebar-bottom-scrollbar-visibility 'Scrolling Left/Right enabled? (Removes bottom scrollbar)' {
+
+@var color instance-text '🆔 Placed Item Text' #000
+@var color instance-top '↪ Placed Item Top Background' #ffffff
+@var color instance-bottom '↪ Placed Item Bottom Background' #f7feff
+@var number instance-gradient '↪ Placed Item Background Gradient Split (%)' [70,0,100,1,'%']
+@var color instance-border '↪ Placed Item Border' #91a8c1
+
+@var color instance-text-hover '🆔 Hover: Placed Item Text' #000
+@var color instance-top-hover '↪ Hover: Placed Item Top Background' #ffffff
+@var color instance-bottom-hover '↪ Hover: Placed Item Bottom Background' #d6fcff
+@var number instance-gradient-hover '↪ Hover: Placed Item Background Gradient Split (%)' [90,0,100,1,'%']
+@var color instance-border-hover '↪ Hover: Placed Item Border' #91a8c1
+
+@var color discovered-item '↪ First Discovery Text' #000
+@var color discovered-emoji '↪ First Discovery Emoji' #000
+@var color new-item '↪ New Item Pinwheel Animation' #fff
+
+@var color sidebar-background '⬜ Sidebar Background' #ffffff
+@var color sidebar-border-left '↪ Sidebar Left Border' #c8c8c8
+@var color sidebar-inverse-shadow-gradient '↪ Sidebar Inverse Shadow Gradient' #ffffff
+@var color no-items-text '❗ No Items Text' #000
+@var color no-items-emoji '↪ No Items Emoji' #000
+@var color instruction-text '❓ Instruction Text' #000
+@var color instruction-emoji '↪ Instruction Emoji' #000
+@var color instruction-border '↪ Instruction Border' #c8c8c8
+
+@var color scrollbar-background '🔄 Scrollbar Background' #f0f0f0
+@var color scrollbar-highlight '↪ Scrollbar Highlight' #cdcdcd
+@var select sidebar-bottom-scrollbar-visibility '↪ Bottom Scrollbar' {
     'Enabled': 'visible',
     'Disabled': 'hidden'
 }
-@var color search-background 'Search Background' #ffffff
-@var color search-text 'Search Text' #000
-@var color item-background 'Item Background' #ffffff
-@var color item-color 'Item' #000
-@var color item-hover 'Item Hover' #d6fcff
-@var color item-border 'Item Border' #c8c8c8
-@var color item-border-hover 'Item Border Hover' #91a8c1
-@var color discovered-item 'First Discovery Text' #000
-@var color discovered-emoji 'First Discovery Emoji' #000
-@var color new-item 'New Item Pinwheel Animation' #fff
-@var color search-close-button-color 'Search Close Button' #000
-@var color search-top-border-color 'Search Top Border' #c8c8c8
-@var color no-items-text-color 'No Items Text' #000
-@var color instruction-text-color 'Instruction Text' #000
-@var color view-buttons-background-color 'View Buttons Background' #ffffff
-@var color view-buttons-color 'View Buttons' #000
-@var color view-buttons-top-border-color 'View Buttons Top Border' #c8c8c8
-@var color view-buttons-separator-border-color 'View Buttons Separator Border' #c8c8c8
-@var color discoveries-active 'Discoveries Button Toggled Background' #fff9ea
-@var color sidebar-inverse-shadow-gradient 'Sidebar Inverse Shadow Gradient' #ffffff
-@var select ads-visibility 'Ads Visibility' {
+
+@var color item-text '🆔 Item Text' #000
+@var color item-top '↪ Item Top Background' #ffffff
+@var color item-bottom '↪ Item Bottom Background' #f7feff
+@var number item-gradient '↪ Item Background Gradient Split (%)' [70,0,100,1,'%']
+@var color item-border '↪ Item Border' #c8c8c8
+
+@var color item-text-hover '🆔 Hover: Item Text' #000
+@var color item-top-hover '↪ Hover: Item Top Background' #ffffff
+@var color item-bottom-hover '↪ Hover: Item Bottom Background' #d6fcff
+@var number item-gradient-hover '↪ Hover: Item Background Gradient Split (%)' [90,0,100,1,'%']
+@var color item-border-hover '↪ Hover: Item Border' #91a8c1
+
+@var color sort-background '🔍 Sort Background' #ffffff
+@var color sort-text '↪ Sort Text' #000
+@var color sort-top-border '↪ Sort Buttons Top Border' #c8c8c8
+@var color sort-separator-border '↪ Sort Buttons Separator Border' #c8c8c8
+@var color time-icon '↪ Sort By Time Icon' #000
+@var color name-icon '↪ Sort By Name Icon' #000
+@var color emoji-icon '↪ Sort By Emoji Icon' #000
+
+@var color discoveries-active '🌟 Clicked: Discoveries Text' #000
+@var color discoveries-active-background '↪ Clicked: Discoveries Background' #fff9ea
+@var color discoveries-icon '↪ Discoveries Icon' #000
+
+@var color search-background '🔤 Search Background' #ffffff
+@var color search-text '↪ Search Text' #000
+@var color search-top-border '↪ Search Top Border' #c8c8c8
+@var color search-close-button '↪ Search Close Button' #000
+
+@var select ads-visibility '❔ Ads Visibility' {
     'Disabled': 'hidden',
     'Enabled': 'visible'
 }
-@var select particles-visibility 'Particles' {
+
+@var select particles-visibility '⭐ Particles' {
     'Enabled': 'visible',
     'Disabled': 'hidden'
 }
-@var select particles-mode 'Particles Modification Toggle' {
+@var select particles-mode '↪ Particles Modification Toggle' {
     'Disabled': 'disabled',
     'Using Drop-Shadow (best)': 'using-drop-shadow',
     'Using Filters': 'using-filter',
     'Using Background Clip (Laggy)': 'using-bg-clip'
 }
-@var color particles 'Particles (Using Background Clip or Drop Shadow)' transparent
-@var number particles-saturation 'Particles Brightness (Multiplier)' [1,-1,2,0.1]
-@var number particles-dupes 'Drop Shadow Duplications (How many extra drop shadows to use)' [0,0,5,1]
-@var number particles-filter 'Particles Hue-Rotate (Degrees) (Using Filters, Weird to customize)' [0, -999999999, 999999999, 1, 'deg']
+@var color particles '↪ Particles (Using Background Clip or Drop Shadow)' transparent
+@var number particles-saturation '↪ Particles Brightness (Multiplier)' [1,-1,2,0.1]
+@var range particles-dupes '↪ Drop Shadow Duplications (How many extra drop shadows to use)' [0,0,5,1]
+@var number particles-filter '↪ Particles Hue-Rotate (Degrees) (Using Filters, Weird to customize)' [0,-999999999,999999999,1,'deg']
 
 ==/UserStyle== */
 
@@ -97,134 +135,172 @@ if particles-dupes >= 1 {
 }
 
 @-moz-document url("https://neal.fun/infinite-craft/") {
-    .sidebar {
-        scrollbar-color: scrollbar-highlight-color scrollbar-color !important;
-        background: sidebar-background !important;
-        overflow-x: sidebar-bottom-scrollbar-visibility !important;
-    }
     .container {
-        background: background !important;
+        background: background;
     }
-    .reset {
-        visibility: reset-text-visibility !important;
-        color: reset-text !important;
-    }
+
     .site-title {
-        visibility: site-title-visibility !important;
-        object-position: -99999px 99999px !important;
-        opacity: 1 !important;
-        background-color: site-title !important;
-        -webkit-mask: url(/general/logo.svg) no-repeat center !important;
-        mask: url(/general/logo.svg) no-repeat center !important;
+        visibility: site-title-visibility;
+        object-position: -99999px 99999px;
+        background-color: site-title;
+        mask-image: url(/general/logo.svg);
+        mask-size: contain
     }
     .logo {
-        visibility: logo-img-visibility !important;
-        object-position: -99999px 99999px !important;
-        opacity: 1 !important;
-        background-color: logo-img !important;
-        -webkit-mask: url(/infinite-craft/logo.svg) no-repeat center !important;
-        mask: url(/infinite-craft/logo.svg) no-repeat center !important;
+        visibility: logo-img-visibility;
+        object-position: -99999px 99999px;
+        background-color: logo-img;
+        mask-image: url(/infinite-craft/logo.svg);
+        mask-size: contain
     }
-    .sidebar {
-        border-left: 1px solid sidebar-border-left-color !important;
+    .reset {
+        visibility: reset-text-visibility;
+        color: reset-text;
     }
-    .sidebar-input {
-        background: search-background !important;
-        color: search-text !important;
-        border-top: 1px solid search-top-border-color !important
+    .coffee {
+        visibility: donate-button-visibility;
+        object-position: -99999px 99999px;
+        background-color: donate-button;
+        mask-image: url(/infinite-craft/coffee.svg);
+        mask-size: contain
     }
-    .item {
-        background: item-background !important;
-        color: item-color !important;
-        border: 1px solid item-border !important;
+    .clear {
+        visibility: trash-button-visibility;
+        object-position: -99999px 99999px;
+        background-color: trash-button;
+        mask-image: url(/infinite-craft/clear.svg);
+        mask-size: contain
     }
-    .item:hover {
-        background-color: item-hover !important;
-        border: 1px solid item-border-hover !important;
+    .sound {
+        visibility: sound-button-visibility;
+        object-position: -99999px 99999px;
+        background-color: sound-button;
+        mask-image: url(/infinite-craft/sound.svg);
+        mask-size: contain
     }
-    .pinwheel {
-        object-position: -99999px 99999px !important;
-        opacity: 1 !important;
-        background: radial-gradient(circle, new-item 0%, transparent 70%) !important;
-        -webkit-mask: url(/infinite-craft/pinwheel.png) no-repeat center !important;
-        mask: url(/infinite-craft/pinwheel.png) no-repeat center !important;
+
+    .instance {
+        color: instance-text !important;
+        background: linear-gradient(0deg, instance-bottom, instance-top instance-gradient) !important;
+        border: 1px solid instance-border !important;
     }
+    .instance:hover {
+        color: instance-text-hover !important;
+        background: linear-gradient(0deg, instance-bottom-hover, instance-top-hover instance-gradient-hover) !important;
+        border: 1px solid instance-border-hover !important;
+    }
+
     .instance-discovered-text {
-        color: discovered-item !important;
+        color: discovered-item;
     }
     .instance-discovered-emoji {
-        object-position: -99999px 99999px !important;
-        opacity: 1 !important;
-        background-color: discovered-emoji !important;
+        object-position: -99999px 99999px;
+        background-color: discovered-emoji;
         mask-image: url("/infinite-craft/magic.svg");
         mask-size: contain;
     }
-    .sidebar-input-close {
-        object-position: -99999px 99999px !important;
-        opacity: 1 !important;
-        background-color: search-close-button-color !important;
-        -webkit-mask: url(/infinite-craft/close.svg) no-repeat center !important;
-        mask: url(/infinite-craft/close.svg) no-repeat center !important;
+    .pinwheel {
+        object-position: -99999px 99999px;
+        background: radial-gradient(circle, new-item 0%, transparent 70%);
+        mask-image: url(/infinite-craft/pinwheel.png);
+        mask-size: contain
     }
+
+    .sidebar {
+        scrollbar-color: scrollbar-highlight scrollbar-background !important;
+        background: sidebar-background !important;
+        overflow-x: sidebar-bottom-scrollbar-visibility !important;
+        border-left: 1px solid sidebar-border-left !important;
+    }
+    .sidebar-controls::after {
+        background: linear-gradient(0deg, sidebar-inverse-shadow-gradient 0%, rgba(0, 0, 0, 0) 100%) !important;
+    }
+    .empty-sidebar {
+        color: no-items-text;
+    }
+    .empty-sidebar-icon {
+        object-position: -99999px 99999px;
+        background-color: no-items-emoji;
+        mask-image: url("/infinite-craft/empty.svg");
+        mask-size: contain;
+    }
+    .instruction {
+        color: instruction-text;
+        border: 1px solid instruction-border !important;
+    }
+    .instruction-icon {
+        object-position: -99999px 99999px;
+        background-color: instruction-emoji;
+        mask-image: url("/infinite-craft/left-arrow.svg");
+        mask-size: contain;
+    }
+
+    .item:not(.instance) {
+        color: item-text !important;
+        background: linear-gradient(0deg, item-bottom, item-top item-gradient) !important;
+        border: 1px solid item-border !important;
+    }
+    .item:hover:not(.instance) {
+        color: item-text-hover !important;
+        background: linear-gradient(0deg, item-bottom-hover, item-top-hover item-gradient-hover) !important;
+        border: 1px solid item-border-hover !important;
+    }
+
+    .sidebar-sorting {
+        border-top: 1px solid sort-top-border !important;
+        background: sort-separator-border !important;
+    }
+    .sidebar-sorting-item {
+        background: sort-background !important;
+        color: sort-text;
+    }
+
+    for sort-type in "time" "name" "emoji" {
+        sort-icon = "/infinite-craft/" + sort-type + ".svg"
+        .sidebar-sort > .sidebar-sorting-icon[src\=\"{sort-icon}\"] {
+            object-position: -99999px 99999px;
+            background-color: lookup(sort-type + "-icon");
+            mask-image: url(sort-icon);
+            mask-size: contain;
+        }
+    }
+
+    .sidebar-discoveries-active {
+        color: discoveries-active;
+        background-color: discoveries-active-background;
+    }
+    .sidebar-discoveries > .sidebar-sorting-icon {
+        object-position: -99999px 99999px;
+        background-color: discoveries-icon;
+        mask-image: url("/infinite-craft/magic.svg");
+        mask-size: contain;
+    }
+
+    .sidebar-input {
+        background: search-background !important;
+        color: search-text;
+        border-top: 1px solid search-top-border !important;
+    }
+    .sidebar-input-close {
+        object-position: -99999px 99999px;
+        background-color: search-close-button;
+        mask-image: url(/infinite-craft/close.svg);
+        mask-size: contain
+    }
+
+    .adsbygoogle {
+        visibility: ads-visibility;
+    }
+
     .particles {
-        visibility: particles-visibility !important;
+        visibility: particles-visibility;
         if (particles-mode == using-filter) {
-            filter: grayscale(100%) invert(50%) sepia(50%) saturate(3207%) hue-rotate(-500deg) hue-rotate(particles-filter) brightness(particles-saturation) contrast(80%) !important;
+            filter: grayscale(100%) invert(50%) sepia(50%) saturate(3207%) hue-rotate(-500deg) hue-rotate(particles-filter) brightness(particles-saturation) contrast(80%);
         } else if (particles-mode == using-bg-clip) {
-            background-color: particles !important;
-            background-clip: text !important;
+            background-color: particles;
+            background-clip: text;
         } else if (particles-mode == using-drop-shadow) {
             filter: drop-shadow blur(1px) brightness(particles-saturation)
         }
-    }
-    .empty-sidebar {
-        color: no-items-text-color !important;
-    }
-    .instruction {
-        color: instruction-text-color !important;
-    }
-    .coffee {
-        visibility: donate-visibility !important;
-    }
-    .sidebar-sorting {
-        border-top: 1px solid view-buttons-top-border-color !important;
-        background: view-buttons-separator-border-color !important
-    }
-    .sidebar-sorting-item {
-        background: view-buttons-background-color !important;
-        color: view-buttons-color !important;
-    }
-    .sidebar-discoveries-active {
-        color: discoveries-active !important;
-    }
-    .clear {
-        visibility: trash-button-visibility !important;
-        object-position: -99999px 99999px !important;
-        opacity: 1 !important;
-        background-color: trash-button !important;
-        -webkit-mask: url(/infinite-craft/clear.svg) no-repeat center !important;
-        mask: url(/infinite-craft/clear.svg) no-repeat center !important;
-    }
-    .sound {
-        visibility: sound-button-visibility !important;
-        object-position: -99999px 99999px !important;
-        opacity: 1 !important;
-        background-color: sound-button !important;
-        -webkit-mask: url(/infinite-craft/sound.svg) no-repeat center !important;
-        mask: url(/infinite-craft/sound.svg) no-repeat center !important;
-    }
-    .coffee {
-        visibility: donate-button-visibility !important;
-        object-position: -99999px 99999px !important;
-        opacity: 1 !important;
-        background-color: donate-button !important;
-        -webkit-mask: url(/infinite-craft/coffee.svg) no-repeat center !important;
-        mask: url(/infinite-craft/coffee.svg) no-repeat center !important;
-    }
-    .sidebar-controls::after {
-        background: linear-gradient(0deg, sidebar-inverse-shadow-gradient 0%, rgba(0, 0, 0, 0) 100%) !important
-    }
-    .adsbygoogle {
-        visibility: ads-visibility !important;
     }
 }
