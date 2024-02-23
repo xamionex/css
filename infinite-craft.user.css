@@ -5,7 +5,7 @@
 @description Choose your infinite craft colors!
 @author amione
 @preprocessor stylus
-@version 1.0.7
+@version 1.0.8
 @license MIT
 
 @var color site-title 'Neal.Fun Image' #040404
@@ -136,12 +136,12 @@
     .particles {
         visibility: particles-visibility !important;
         if (particles-mode == using-filter) {
-            filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(particles-filter) brightness(95%) contrast(80%) !important;
+            filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(particles-filter) brightness(particles-saturation) contrast(80%) !important;
         } else if (particles-mode == using-bg-clip) {
             background-color: particles !important;
             background-clip: text !important;
+            filter: brightness(particles-saturation)
         }
-        filter: brightness(particles-saturation)
     }
     .empty-sidebar {
         color: no-items-text-color !important;
