@@ -2,11 +2,10 @@
 @name Infinite Craft Themer
 @namespace github.com/xamionex/css
 @homepageURL https://userstyles.world/style/14916/infinite-craft-themer
-@updateURL https://raw.githubusercontent.com/xamionex/css/main/infinite-craft.user.css
 @description Choose your infinite craft colors!
 @author amione
 @preprocessor stylus
-@version 1.0.6
+@version 1.0.7
 @license MIT
 
 @var color site-title 'Neal.Fun Image' #040404
@@ -69,10 +68,17 @@
     'Enabled': 'visible',
     'Disabled': 'hidden'
 }
-@var color particles 'Particles (adds overlay, quirky)' transparent
+@var select particles-mode 'Particles Modification Toggle' {
+    'Disabled': 'disabled',
+    'Using Filters': 'using-filter',
+    'Using Background Clip (Laggy)': 'using-bg-clip'
+}
+@var number particles-filter 'Particles Hue-Rotate (Degrees) (filter mode, workaround to not lose fps)' [0, -999999999, 999999999, 0.1, 'deg']
+@var color particles 'Particles (adds overlay, non-filter mode only)' transparent
 @var range particles-saturation 'Particles Brightness (Multiplier)' [1,1,10,0.1]
 
 ==/UserStyle== */
+
 @-moz-document url("https://neal.fun/infinite-craft/") {
     .sidebar {
         scrollbar-color: scrollbar-highlight-color scrollbar-color !important;
@@ -129,9 +135,13 @@
     }
     .particles {
         visibility: particles-visibility !important;
-        background-color: particles !important;
-        background-clip: text !important;
-        filter: brightness(particles-saturation) !important;
+        if (particles-mode == using-filter) {
+            filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(particles-filter) brightness(95%) contrast(80%) !important;
+        } else if (particles-mode == using-bg-clip) {
+            background-color: particles !important;
+            background-clip: text !important;
+        }
+        filter: brightness(particles-saturation)
     }
     .empty-sidebar {
         color: no-items-text-color !important;
