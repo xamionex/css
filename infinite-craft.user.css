@@ -5,7 +5,7 @@
 @description Choose your infinite craft colors!
 @author amione
 @preprocessor stylus
-@version 1.1.0
+@version 1.1.1
 @license MIT
 
 @var color site-title 'Neal.Fun Image' #040404
@@ -38,11 +38,15 @@
     'Enabled': 'visible',
     'Disabled': 'hidden'
 }
-@var color scrollbar-color 'Scrollbar' #f0f0f0
-@var color scrollbar-highlight-color 'Scrollbar Highlight' #cdcdcd
 @var color background 'Background' #ffffff
 @var color sidebar-background 'Sidebar Background' #ffffff
 @var color sidebar-border-left-color 'Sidebar Left Border' #c8c8c8
+@var color scrollbar-color 'Scrollbar' #f0f0f0
+@var color scrollbar-highlight-color 'Scrollbar Highlight' #cdcdcd
+@var select sidebar-bottom-scrollbar-visibility 'Scrolling Left/Right enabled? (Removes bottom scrollbar)' {
+    'Enabled': 'visible',
+    'Disabled': 'hidden'
+}
 @var color search-background 'Search Background' #ffffff
 @var color search-text 'Search Text' #000
 @var color item-background 'Item Background' #ffffff
@@ -95,6 +99,8 @@ if particles-dupes >= 1 {
 @-moz-document url("https://neal.fun/infinite-craft/") {
     .sidebar {
         scrollbar-color: scrollbar-highlight-color scrollbar-color !important;
+        background: sidebar-background !important;
+        overflow-x: sidebar-bottom-scrollbar-visibility !important;
     }
     .container {
         background: background !important;
@@ -118,9 +124,6 @@ if particles-dupes >= 1 {
         background-color: logo-img !important;
         -webkit-mask: url(/infinite-craft/logo.svg) no-repeat center !important;
         mask: url(/infinite-craft/logo.svg) no-repeat center !important;
-    }
-    .items {
-        background: sidebar-background !important;
     }
     .sidebar {
         border-left: 1px solid sidebar-border-left-color !important;
