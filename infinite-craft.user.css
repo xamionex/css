@@ -5,7 +5,7 @@
 @description Choose your infinite craft colors!
 @author amione
 @preprocessor stylus
-@version 1.2.7
+@version 1.2.8
 @license MIT
 
 @var color background '🪟 Background' #ffffff
@@ -204,6 +204,12 @@ if particles-dupes >= 1 {
         mask-size: contain;
         mask-repeat: no-repeat;
         mask-position: center;
+    }
+    .reset:hover {
+        transform: scale(1.05);
+    }
+    .site-title:hover, .clear:hover, .coffee:hover, .dark-mode-icon:hover, .sound:hover, .reset:hover {
+        transition: all 0.1s ease-in-out;
     }
 
     .instance {
