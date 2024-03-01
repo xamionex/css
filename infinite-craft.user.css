@@ -5,10 +5,8 @@
 @description Choose your infinite craft colors!
 @author amione
 @preprocessor stylus
-@version 1.2.5
+@version 1.2.6
 @license MIT
-
-
 
 @var color background '🪟 Background' #ffffff
 
@@ -155,6 +153,7 @@ if particles-dupes >= 1 {
         mask-image: url(/general/logo.svg);
         mask-size: contain;
         mask-repeat: no-repeat;
+        mask-position: center;
     }
     .logo {
         visibility: logo-img-visibility;
@@ -330,8 +329,24 @@ if particles-dupes >= 1 {
 
     .sidebar-input {
         background: search-background !important;
-        color: search-text;
+        color: search-text !important;
         border-top: 1px solid search-top-border !important;
+    }
+    .sidebar-search:before {
+        pointer-events: none;
+        display: block;
+        content: ' ';
+        background-color: discoveries-active-icon !important;
+        mask-image: url("/infinite-craft/search.svg");
+        mask-size: 22px;
+        mask-repeat: no-repeat;
+        mask-position: 50% 60%;
+        height: 45px;
+        width: 43px;
+        left: 0px;
+        top: 0px;
+        position: absolute;
+        z-index: 10;
     }
     .sidebar-input-close {
         object-position: -99999px 99999px;
