@@ -5,7 +5,7 @@
 @description Choose your infinite craft colors!
 @author amione
 @preprocessor stylus
-@version 1.2.6
+@version 1.2.7
 @license MIT
 
 @var color background '🪟 Background' #ffffff
@@ -107,6 +107,7 @@
 @var color discoveries-active-icon '↪ Clicked: Discoveries Icon' #000
 
 @var color search-background '🔤 Search Background' #ffffff
+@var color search-icon '↪ Search Icon' #9f9f9f
 @var color search-text '↪ Search Text' #000
 @var color search-top-border '↪ Search Top Border' #c8c8c8
 @var color search-close-button '↪ Search Close Button' #000
@@ -336,11 +337,11 @@ if particles-dupes >= 1 {
         pointer-events: none;
         display: block;
         content: ' ';
-        background-color: discoveries-active-icon !important;
+        background-color: search-icon !important;
         mask-image: url("/infinite-craft/search.svg");
-        mask-size: 22px;
+        mask-size: 23px;
         mask-repeat: no-repeat;
-        mask-position: 50% 60%;
+        mask-position: 53% 60%;
         height: 45px;
         width: 43px;
         left: 0px;
