@@ -5,7 +5,7 @@
 @description Choose your infinite craft colors!
 @author amione
 @preprocessor stylus
-@version 1.2.4
+@version 1.2.5
 @license MIT
 
 
@@ -29,8 +29,13 @@
 }
 @var color donate-button '↪ Donate Button' #040404
 @var select donate-button-visibility '↪ Donate Button' {
-    'Disabled': 'hidden',
-    'Enabled': 'visible'
+    'Enabled': 'visible',
+    'Disabled': 'hidden'
+}
+@var color darkmode-button '↪ Dark Mode Button' #040404
+@var select darkmode-button-visibility '↪ Dark Mode Button (This button inverts colors)' {
+    'Enabled': 'visible',
+    'Disabled': 'hidden'
 }
 @var color clear-button '↪ Clear Button' #040404
 @var select clear-button-visibility '↪ Clear Button' {
@@ -158,6 +163,7 @@ if particles-dupes >= 1 {
         mask-image: url(/infinite-craft/logo.svg);
         mask-size: contain;
         mask-repeat: no-repeat;
+        mask-position: center;
     }
     .reset {
         visibility: reset-text-visibility;
@@ -170,6 +176,16 @@ if particles-dupes >= 1 {
         mask-image: url(/infinite-craft/coffee.svg);
         mask-size: contain;
         mask-repeat: no-repeat;
+        mask-position: center;
+    }
+    .dark-mode-icon {
+        visibility: darkmode-button-visibility;
+        object-position: -99999px 99999px;
+        background-color: donate-button;
+        mask-image: url(/infinite-craft/dark-mode-on.svg);
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        mask-position: center;
     }
     .clear {
         visibility: clear-button-visibility;
@@ -178,6 +194,7 @@ if particles-dupes >= 1 {
         mask-image: url(/infinite-craft/clear.svg);
         mask-size: contain;
         mask-repeat: no-repeat;
+        mask-position: center;
     }
     .sound {
         visibility: sound-button-visibility;
@@ -186,6 +203,7 @@ if particles-dupes >= 1 {
         mask-image: url(/infinite-craft/sound.svg);
         mask-size: contain;
         mask-repeat: no-repeat;
+        mask-position: center;
     }
 
     .instance {
@@ -208,6 +226,7 @@ if particles-dupes >= 1 {
         mask-image: url("/infinite-craft/magic.svg");
         mask-size: contain;
         mask-repeat: no-repeat;
+        mask-position: center;
     }
     .pinwheel {
         object-position: -99999px 99999px;
@@ -215,6 +234,7 @@ if particles-dupes >= 1 {
         mask-image: url(/infinite-craft/pinwheel.png);
         mask-size: contain;
         mask-repeat: no-repeat;
+        mask-position: center;
     }
 
     .sidebar {
@@ -235,6 +255,7 @@ if particles-dupes >= 1 {
         mask-image: url("/infinite-craft/empty.svg");
         mask-size: contain;
         mask-repeat: no-repeat;
+        mask-position: center;
     }
     .instruction {
         color: instruction-text;
@@ -246,6 +267,7 @@ if particles-dupes >= 1 {
         mask-image: url("/infinite-craft/left-arrow.svg");
         mask-size: contain;
         mask-repeat: no-repeat;
+        mask-position: center;
     }
 
     .item:not(.instance) {
@@ -276,6 +298,7 @@ if particles-dupes >= 1 {
             mask-image: url(sort-icon);
             mask-size: contain;
             mask-repeat: no-repeat;
+            mask-position: center;
         }
     }
 
@@ -289,6 +312,7 @@ if particles-dupes >= 1 {
         mask-image: url("/infinite-craft/magic.svg");
         mask-size: contain;
         mask-repeat: no-repeat;
+        mask-position: center;
     }
 
     .sidebar-discoveries-active {
@@ -301,6 +325,7 @@ if particles-dupes >= 1 {
         mask-image: url("/infinite-craft/magic.svg");
         mask-size: contain;
         mask-repeat: no-repeat;
+        mask-position: center;
     }
 
     .sidebar-input {
@@ -314,6 +339,7 @@ if particles-dupes >= 1 {
         mask-image: url(/infinite-craft/close.svg);
         mask-size: contain;
         mask-repeat: no-repeat;
+        mask-position: center;
     }
 
     .adsbygoogle {
