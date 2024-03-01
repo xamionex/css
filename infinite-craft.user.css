@@ -5,7 +5,7 @@
 @description Choose your infinite craft colors!
 @author amione
 @preprocessor stylus
-@version 1.2.3
+@version 1.2.4
 @license MIT
 
 
@@ -140,7 +140,7 @@ if particles-dupes >= 1 {
 
 @-moz-document url("https://neal.fun/infinite-craft/") {
     .container {
-        background: background;
+        background: background !important;
     }
 
     .site-title {
