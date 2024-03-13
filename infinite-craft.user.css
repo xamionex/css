@@ -5,7 +5,7 @@
 @description Choose your infinite craft colors!
 @author amione
 @preprocessor stylus
-@version 1.2.8
+@version 1.2.9
 @license MIT
 
 @var color background '🪟 Background' #ffffff
@@ -25,8 +25,13 @@
     'Enabled': 'visible',
     'Disabled': 'hidden'
 }
-@var color donate-button '↪ Donate Button' #040404
-@var select donate-button-visibility '↪ Donate Button' {
+@var color donate-button '↪ Donate Button (Seems to be removed)' #040404
+@var select donate-button-visibility '↪ Donate Button (Seems to be removed)' {
+    'Enabled': 'visible',
+    'Disabled': 'hidden'
+}
+@var color trash-button '↪ Trash Item Button' #040404
+@var select trash-button-visibility '↪ Trash Item Button' {
     'Enabled': 'visible',
     'Disabled': 'hidden'
 }
@@ -178,10 +183,41 @@ if particles-dupes >= 1 {
         mask-repeat: no-repeat;
         mask-position: center;
     }
-    .dark-mode-icon {
+    .trash {
+        visibility: trash-button-visibility;
+        object-position: -99999px 99999px;
+        background-color: trash-button;
+        mask-image: url(/infinite-craft/trash.svg);
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        mask-position: center;
+    }
+    .trash-active {
+        animation: sway .3s linear infinite alternate-reverse !important;
+    }
+    @keyframes sway {
+        0% {
+                rotate: -6deg;
+                filter: blur(0.18px);
+        }
+        to {
+                rotate: 6deg;
+                filter: blur(0.18px);
+        }
+    }
+    .dark-mode-icon[src="/infinite-craft/dark-mode.svg"] {
         visibility: darkmode-button-visibility;
         object-position: -99999px 99999px;
-        background-color: donate-button;
+        background-color: darkmode-button;
+        mask-image: url(/infinite-craft/dark-mode.svg);
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        mask-position: center;
+    }
+    .dark-mode-icon[src="/infinite-craft/dark-mode-on.svg"] {
+        visibility: darkmode-button-visibility;
+        object-position: -99999px 99999px;
+        background-color: darkmode-button;
         mask-image: url(/infinite-craft/dark-mode-on.svg);
         mask-size: contain;
         mask-repeat: no-repeat;
@@ -196,7 +232,7 @@ if particles-dupes >= 1 {
         mask-repeat: no-repeat;
         mask-position: center;
     }
-    .sound {
+    .sound[src="/infinite-craft/sound.svg"] {
         visibility: sound-button-visibility;
         object-position: -99999px 99999px;
         background-color: sound-button;
@@ -205,11 +241,18 @@ if particles-dupes >= 1 {
         mask-repeat: no-repeat;
         mask-position: center;
     }
-    .reset:hover {
-        transform: scale(1.05);
+    .sound[src="/infinite-craft/mute.svg"] {
+        visibility: sound-button-visibility;
+        object-position: -99999px 99999px;
+        background-color: sound-button;
+        mask-image: url(/infinite-craft/mute.svg);
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        mask-position: center;
     }
-    .site-title:hover, .clear:hover, .coffee:hover, .dark-mode-icon:hover, .sound:hover, .reset:hover {
-        transition: all 0.1s ease-in-out;
+    .site-title:hover, .clear:hover, .coffee:hover, .trash:hover, .dark-mode-icon:hover, .sound:hover, .reset:hover {
+        transform: scale(1.05,1.05) !important;
+        transition: all 0.1s ease-in-out !important;
     }
 
     .instance {
