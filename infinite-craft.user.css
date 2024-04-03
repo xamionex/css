@@ -5,51 +5,66 @@
 @description Choose your infinite craft colors!
 @author amione
 @preprocessor stylus
-@version 1.2.9
+@version 1.3.0
 @license MIT
+
+@var text readme "⛔ I have marked options that wont work properly because they have been blocked by CORS" "''"
+@var text readme2 "↪ If anyone knows how to bypass it, please contact me or head to the github repo and make an issue or pull request" "''"
+
+@var text site-title-svg '⛔ Custom Neal Fun SVG' "'default'"
+@var text logo-img-svg '⛔ Custom Logo Image SVG' "'default'"
+@var text reset-text-custom '✅ Custom Reset Button Text' "'Reset'"
+@var text donate-button-svg '⛔ Custom Donate Button SVG' "'default'"
+@var text trash-button-svg '⛔ Custom Trash Item Button SVG' "'default'"
+@var text darkmode-button-svg '⛔ Custom Dark Mode Button SVG' "'default'"
+@var text darkmode-button-on-svg '⛔ Custom Dark Mode Button SVG (ON)' "'default'"
+@var text clear-button-svg '⛔ Custom Clear Button SVG' "'default'"
+@var text sound-button-svg '⛔ Custom Sound Button SVG' "'default'"
+@var text sound-button-muted-svg '⛔ Custom Sound Button SVG (MUTED)' "'default'"
 
 @var color background '🪟 Background' #ffffff
 
-@var color site-title '↪ Neal.Fun Image' #040404
 @var select site-title-visibility '↪ Neal Fun Image' {
     'Enabled': 'visible',
     'Disabled': 'hidden'
 }
-@var color logo-img '↪ Logo Image' #040404
 @var select logo-img-visibility '↪ Logo Image' {
     'Enabled': 'visible',
     'Disabled': 'hidden'
 }
-@var color reset-text '↪ Reset Text Button' #040404
 @var select reset-text-visibility '↪ Reset Text Button' {
     'Enabled': 'visible',
     'Disabled': 'hidden'
 }
-@var color donate-button '↪ Donate Button (Seems to be removed)' #040404
 @var select donate-button-visibility '↪ Donate Button (Seems to be removed)' {
     'Enabled': 'visible',
     'Disabled': 'hidden'
 }
-@var color trash-button '↪ Trash Item Button' #040404
 @var select trash-button-visibility '↪ Trash Item Button' {
     'Enabled': 'visible',
     'Disabled': 'hidden'
 }
-@var color darkmode-button '↪ Dark Mode Button' #040404
 @var select darkmode-button-visibility '↪ Dark Mode Button (This button inverts colors)' {
     'Enabled': 'visible',
     'Disabled': 'hidden'
 }
-@var color clear-button '↪ Clear Button' #040404
 @var select clear-button-visibility '↪ Clear Button' {
     'Enabled': 'visible',
     'Disabled': 'hidden'
 }
-@var color sound-button '↪ Sound Button' #040404
 @var select sound-button-visibility '↪ Sound Button' {
     'Enabled': 'visible',
     'Disabled': 'hidden'
 }
+
+@var color site-title '↪ Neal.Fun Image' #040404
+@var color logo-img '↪ Logo Image' #040404
+@var color reset-text '↪ Reset Text Button' #040404
+@var color donate-button '↪ Donate Button (Seems to be removed)' #040404
+@var color trash-button '↪ Trash Item Button' #040404
+@var color darkmode-button '↪ Dark Mode Button' #040404
+@var color clear-button '↪ Clear Button' #040404
+@var color sound-button '↪ Sound Button' #040404
 
 @var color instance-text '🆔 Placed Item Text' #000
 @var color instance-top '↪ Placed Item Top Background' #ffffff
@@ -63,7 +78,7 @@
 @var number instance-gradient-hover '↪ Hover: Placed Item Background Gradient Split (%)' [90,0,100,1,'%']
 @var color instance-border-hover '↪ Hover: Placed Item Border' #91a8c1
 
-@var color discovered-item '↪ First Discovery Text' #000
+@var color discovered-item '🆕 First Discovery Text' #000
 @var color discovered-emoji '↪ First Discovery Emoji' #000
 @var color new-item '↪ New Item Pinwheel Animation' #fff
 
@@ -156,7 +171,11 @@ if particles-dupes >= 1 {
         visibility: site-title-visibility;
         object-position: -99999px 99999px;
         background-color: site-title;
-        mask-image: url(/general/logo.svg);
+        if (site-title-svg == "default") {
+            mask-image: url(/general/logo.svg);
+        } else {
+            mask-image: url(site-title-svg);
+        }
         mask-size: contain;
         mask-repeat: no-repeat;
         mask-position: center;
@@ -165,20 +184,37 @@ if particles-dupes >= 1 {
         visibility: logo-img-visibility;
         object-position: -99999px 99999px;
         background-color: logo-img;
-        mask-image: url(/infinite-craft/logo.svg);
+        if (logo-img-svg == "default") {
+            mask-image: url(/infinite-craft/logo.svg);
+        } else {
+            mask-image: url(logo-img-svg);
+        }
         mask-size: contain;
         mask-repeat: no-repeat;
         mask-position: center;
     }
     .reset {
+        visibility: hidden;
+    }
+    .reset::after {
+        visibility: visible;
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 15px;
         visibility: reset-text-visibility;
         color: reset-text;
+        content: reset-text-custom;
     }
     .coffee {
         visibility: donate-button-visibility;
         object-position: -99999px 99999px;
         background-color: donate-button;
-        mask-image: url(/infinite-craft/coffee.svg);
+        if (donate-button-svg == 'default') {
+            mask-image: url(/infinite-craft/coffee.svg);
+        } else {
+            mask-image: url(donate-button-svg);
+        }
         mask-size: contain;
         mask-repeat: no-repeat;
         mask-position: center;
@@ -187,7 +223,11 @@ if particles-dupes >= 1 {
         visibility: trash-button-visibility;
         object-position: -99999px 99999px;
         background-color: trash-button;
-        mask-image: url(/infinite-craft/trash.svg);
+        if (trash-button-svg == 'default') {
+            mask-image: url(/infinite-craft/trash.svg);
+        } else {
+            mask-image: url(trash-button-svg);
+        }
         mask-size: contain;
         mask-repeat: no-repeat;
         mask-position: center;
@@ -209,7 +249,11 @@ if particles-dupes >= 1 {
         visibility: darkmode-button-visibility;
         object-position: -99999px 99999px;
         background-color: darkmode-button;
-        mask-image: url(/infinite-craft/dark-mode.svg);
+        if (darkmode-button-svg == 'default') {
+            mask-image: url(/infinite-craft/dark-mode.svg);
+        } else {
+            mask-image: url(darkmode-button-svg);
+        }
         mask-size: contain;
         mask-repeat: no-repeat;
         mask-position: center;
@@ -218,7 +262,11 @@ if particles-dupes >= 1 {
         visibility: darkmode-button-visibility;
         object-position: -99999px 99999px;
         background-color: darkmode-button;
-        mask-image: url(/infinite-craft/dark-mode-on.svg);
+        if (darkmode-button-on-svg == 'default') {
+            mask-image: url(/infinite-craft/dark-mode-on.svg);
+        } else {
+            mask-image: url(darkmode-button-on-svg);
+        }
         mask-size: contain;
         mask-repeat: no-repeat;
         mask-position: center;
@@ -227,7 +275,11 @@ if particles-dupes >= 1 {
         visibility: clear-button-visibility;
         object-position: -99999px 99999px;
         background-color: clear-button;
-        mask-image: url(/infinite-craft/clear.svg);
+        if (clear-button-svg == 'default') {
+            mask-image: url(/infinite-craft/clear.svg);
+        } else {
+            mask-image: url(clear-button-svg);
+        }
         mask-size: contain;
         mask-repeat: no-repeat;
         mask-position: center;
@@ -236,7 +288,11 @@ if particles-dupes >= 1 {
         visibility: sound-button-visibility;
         object-position: -99999px 99999px;
         background-color: sound-button;
-        mask-image: url(/infinite-craft/sound.svg);
+        if (sound-button-svg == 'default') {
+            mask-image: url(/infinite-craft/sound.svg);
+        } else {
+            mask-image: url(sound-button-svg);
+        }
         mask-size: contain;
         mask-repeat: no-repeat;
         mask-position: center;
@@ -245,7 +301,11 @@ if particles-dupes >= 1 {
         visibility: sound-button-visibility;
         object-position: -99999px 99999px;
         background-color: sound-button;
-        mask-image: url(/infinite-craft/mute.svg);
+        if (sound-button-muted-svg == 'default') {
+            mask-image: url(/infinite-craft/mute.svg);
+        } else {
+            mask-image: url(sound-button-muted-svg);
+        }
         mask-size: contain;
         mask-repeat: no-repeat;
         mask-position: center;
